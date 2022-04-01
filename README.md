@@ -10,7 +10,17 @@ are used.
  2. Make sure that the initially zoomed image will show the same region of the image
     as we saw in cropped thumbnail.
 
+[View Demo](https://vovayatsyuk.github.io/photoswipe-object-position/)
+
 ## Usage
+
+Download the `photoswipe-object-position.js` file and put it to your assets folder.
+
+> Alternatively, you may install the plugin via NPM:
+>
+> ```
+> npm i @vovayatsyuk/photoswipe-object-position
+> ```
 
 ```js
 import PhotoSwipeLightbox from '/assets/photoswipe/dist/photoswipe-lightbox.esm.js';
