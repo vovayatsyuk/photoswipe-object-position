@@ -4,6 +4,9 @@ ObjectPosition — is a [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 plugin that improves `object-position` property handling when cropped thumbnails
 are used.
 
+**You don't need this plugin if you don't use `object-position` for your cropped
+thumbnails.**
+
 ## Improvements
 
  1. Fixes thumbnail jumping animation while opening/closing lightbox.
