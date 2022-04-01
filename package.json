@@ -1,0 +1,22 @@
+{
+  "name": "@vovayatsyuk/photoswipe-object-position",
+  "version": "1.0.0",
+  "description": "Improved object-position property handling",
+  "main": "photoswipe-object-position.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vovayatsyuk/photoswipe-object-position.git"
+  },
+  "keywords": [
+    "photoswipe"
+  ],
+  "author": "Vova Yatsyuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vovayatsyuk/photoswipe-object-position/issues"
+  },
+  "homepage": "https://github.com/vovayatsyuk/photoswipe-object-position#readme"
+}
