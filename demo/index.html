@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="ObjectPosition plugin demo" />
+    <meta charset="utf-8">
+    <title>ObjectPosition plugin demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        margin: 3rem;
+        font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+      }
+      p {
+        margin-top: 0;
+      }
+      section + section {
+        margin-top: 2rem;
+      }
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      [data-cropped] img {
+        object-fit: cover;
+      }
+      [data-cropped] .top {
+        object-position: center top;
+        height: 150px;
+      }
+      [data-cropped] .bottom-right {
+        object-position: right bottom;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css"/>
+  </head>
+  <body>
+    <section>
+      <h2>Fixed opening/closing animation</h2>
+      <div class="flex">
+        <div id="animation-without-plugin">
+          <p>Without plugin</p>
+          <a href="img/karina-tess-HWOyT8mKdCg-unsplash-large.jpg"
+            data-pswp-width="960"
+            data-pswp-height="1366"
+            data-cropped="true"
+            target="_blank">
+            <img class="top"
+              src="img/karina-tess-HWOyT8mKdCg-unsplash.jpg"
+              width="320"
+              height="455"
+            />
+          </a>
+        </div>
+        <div id="animation-with-plugin">
+          <p>With <a href="https://github.com/vovayatsyuk/photoswipe-object-position">plugin</a></p>
+          <a href="img/karina-tess-HWOyT8mKdCg-unsplash-large.jpg"
+            data-pswp-width="960"
+            data-pswp-height="1366"
+            data-cropped="true"
+            target="_blank">
+            <img class="top"
+              src="img/karina-tess-HWOyT8mKdCg-unsplash.jpg"
+              width="320"
+              height="455"
+            />
+          </a>
+        </div>
+      </div>
+
+      <script type="module">
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.2.2/dist/photoswipe-lightbox.esm.min.js';
+        import ObjectPosition from 'https://unpkg.com/@vovayatsyuk/photoswipe-object-position@1.0.0/photoswipe-object-position.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: '#animation-without-plugin',
+          children: 'a[data-pswp-width]',
+          pswpModule: () => import('https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.esm.min.js')
+        });
+        lightbox.init();
+
+        const lightboxWithPlugin = new PhotoSwipeLightbox({
+          gallery: '#animation-with-plugin',
+          children: 'a[data-pswp-width]',
+          pswpModule: () => import('https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.esm.min.js')
+        });
+        new ObjectPosition(lightboxWithPlugin);
+        lightboxWithPlugin.init();
+      </script>
+    </section>
+
+    <section>
+      <h2>Preserve same visible region when image doesn't fit the screen</h2>
+      <div class="flex">
+        <div id="region-without-plugin">
+          <p>Without plugin</p>
+          <a href="img/karina-tess-HWOyT8mKdCg-unsplash-large.jpg"
+            data-pswp-width="960"
+            data-pswp-height="1366"
+            data-cropped="true"
+            target="_blank">
+            <img class="top"
+              src="img/karina-tess-HWOyT8mKdCg-unsplash.jpg"
+              width="320"
+              height="455"
+            />
+          </a>
+        </div>
+        <div id="region-with-plugin">
+          <p>With <a href="https://github.com/vovayatsyuk/photoswipe-object-position">plugin</a></p>
+          <a href="img/karina-tess-HWOyT8mKdCg-unsplash-large.jpg"
+            data-pswp-width="960"
+            data-pswp-height="1366"
+            data-cropped="true"
+            target="_blank">
+            <img class="top"
+              src="img/karina-tess-HWOyT8mKdCg-unsplash.jpg"
+              width="320"
+              height="455"
+            />
+          </a>
+        </div>
+      </div>
+
+      <script type="module">
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5.2.2/dist/photoswipe-lightbox.esm.min.js';
+        import ObjectPosition from 'https://unpkg.com/@vovayatsyuk/photoswipe-object-position@1.0.0/photoswipe-object-position.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: '#region-without-plugin',
+          children: 'a[data-pswp-width]',
+          initialZoomLevel: 1,
+          secondaryZoomLevel: 1,
+          pswpModule: () => import('https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.esm.min.js')
+        });
+        lightbox.init();
+
+        const lightboxWithPlugin = new PhotoSwipeLightbox({
+          gallery: '#region-with-plugin',
+          children: 'a[data-pswp-width]',
+          initialZoomLevel: 1,
+          secondaryZoomLevel: 1,
+          pswpModule: () => import('https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.esm.min.js')
+        });
+        new ObjectPosition(lightboxWithPlugin);
+        lightboxWithPlugin.init();
+      </script>
+    </section>
+  </body>
+</html>
